@@ -21,6 +21,6 @@
 <body>
     <h1>Hello World!</h1>
     <p>Welcome! This is your first Kubernetes application.</p>
-    <p>(Hostname: <?php echo gethostname(); ?>; IP: <?php echo $_SERVER['REMOTE_ADDR']; ?>).</p>
+    <p>(Hostname: <?php echo gethostname(); ?>).</p>
 </body>
 </html>
