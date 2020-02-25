@@ -20,7 +20,7 @@
 </head>
 <body>
     <h1>Hello World!</h1>
-    <p>Welcome! This is your first Kubernetes application.</p>
+    <p>Welcome! This is your first Kubernetes application (<?php echo file_get_contents("VERSION");?>).</p>
     <p>(Hostname: <?php echo gethostname(); ?>).</p>
 </body>
 </html>

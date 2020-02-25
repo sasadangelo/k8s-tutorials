@@ -10,6 +10,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY ./www-data /home/www/www-data
 # Copy the version file in the Docker image
 COPY VERSION .
+COPY VERSION /home/www/www-data
 
 # Expose port 80
 EXPOSE 80
