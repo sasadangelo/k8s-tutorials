@@ -109,7 +109,7 @@ kubectl describe service hello-k8s-service -n hello-k8s-ns | grep NodePort
 Clean up the configuration using the commands:
 
 ```
-kubectl delete service hello-k8s-service
-kubectl delete deployment deployment.apps/hello-k8s-deployment
+kubectl delete service hello-k8s-service -n hello-k8s-ns
+kubectl delete deployment hello-k8s-deployment -n hello-k8s-ns
 kubectl delete namespace hello-k8s-ns
 ```
