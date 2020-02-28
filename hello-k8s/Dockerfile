@@ -19,4 +19,3 @@ COPY VERSION /home/www/www-data
 EXPOSE 80
 # Run nginx
 ENTRYPOINT /entrypoint.sh
-#service php7.0-fpm start && /usr/sbin/nginx
