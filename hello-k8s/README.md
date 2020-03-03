@@ -4,13 +4,7 @@ This is your first Kubernetes "Hello World" application. It is an Nginx web serv
 
 # Run the demo
 
-Kubernetes allows to run a containerized application in three ways: 
-
-1. **generators** approach;
-2. **imperative** approach;
-3. **declarative** approach.
-
-The methods 1 and 2 are achieved via **kubectl** CLI while the method 3 is achieved declaring the desired state in a YAML configuration file. Let's analyze all this methods in details.
+Kubernetes allows to run a containerized application in three approaches: **generators**, **imperative**, **declarative**. The first two methods are achieved via **kubectl** CLI while the hird method is achieved declaring the desired state in a YAML configuration file. Let's analyze all this methods in details.
 
 ## Generators
 
@@ -113,3 +107,5 @@ kubectl delete service hello-k8s-service -n hello-k8s-ns
 kubectl delete deployment hello-k8s-deployment -n hello-k8s-ns
 kubectl delete namespace hello-k8s-ns
 ```
+
+For more details heck the [following article](http://code4projects.altervista.org/how-to-create-your-own-kubernetes-cluster/).
