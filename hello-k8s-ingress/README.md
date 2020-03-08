@@ -1,6 +1,6 @@
 # Hello-k8s Ingress Tutorial
 
-In the [previous tutorial](https://github.com/sasadangelo/k8s-tutorials/tree/master/hello-k8s) you were able to run the application using a NodePort service. With this approach you could connect to the application via browser using IP:PORT address, where IP is the IP 192.168.x.x of one of the three nodes and PORT is a value between 30000-32767 range. The aim of this tutorial is to associate to the application a DNS name (i.e. hello-k8s.info) and access to it via this name on 80 port. To do that we are going to introduce the concept of Ingress.
+In the [previous tutorial](https://github.com/sasadangelo/k8s-tutorials/tree/master/hello-k8s) you were able to run the Hello-K8s application using a NodePort service. With this approach you could connect to the application via browser using IP:PORT address, where IP is the IP 192.168.x.x of one of the three nodes and PORT is a value between 30000-32767 range. The aim of this tutorial is to associate to the application a DNS name (i.e. hello-k8s.info) and access to it via this name on 80 port. To do that we are going to introduce the concept of Ingress.
 
 ## What is an Ingress?
 
@@ -10,7 +10,7 @@ Ingress exposes HTTP and HTTPS routes from outside the cluster to services withi
 
 ## Run Demo
 
-First of all, deploy 5 replica of the Hello-k8s application with the following commands:
+First of all, deploy 5 replicas of the Hello-K8s application with the following commands:
 
 ```
 kubectl create deployment hello-k8s --image=sasadangelo/hello-k8s:latest
@@ -18,13 +18,13 @@ kubectl expose deployment hello-k8s --type=NodePort --port=80
 kubectl scale --replicas=5 deployment.apps/hello-k8s
 ```
 
-Verify everything works fine accessing via browser to the address ````192.168.x.x:PORT```, where 192.168.x.x is the address of one of the three nodes and PORT comes from the command:
+Verify everything works fine accessing via browser to the address ```192.168.x.x:PORT```, where 192.168.x.x is the address of one of the three nodes and PORT comes from the command:
 
 ```
 kubectl describe service hello-k8s | grep NodePort
 ```
 
-In order to access to the application via browser using an hostname and 80 port, install the ingress:
+In order to access to the application via browser, using an hostname and 80 port, install the ingress:
 
 ```
 git clone https://github.com/sasadangelo/k8s-tutorials
