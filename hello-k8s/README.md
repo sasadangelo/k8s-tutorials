@@ -63,7 +63,7 @@ In order to connect with the browser from your host machine you need to expose t
 kubectl expose deployment hello-k8s --type=NodePort --port=80
 ```
 
-You can type now in your browser the URL ```ÌP:PORT``` where IP is the ```192.168.x.x``` address of one of the two worker nodes ( **k8s-node-1** or **k8s-node-2** ) and PORT is the one you get typing the command:
+You can type now in your browser the URL ```ÌP:PORT``` where IP is the ```192.168.x.x``` address of one of the two worker nodes ( **k8s-worker-1** or **k8s-worker-2** ) and PORT is the one you get typing the command:
 
 ```
 kubectl describe service hello-k8s | grep NodePort
@@ -94,7 +94,7 @@ The command to deploy and run the application is:
 kubectl apply -f https://raw.githubusercontent.com/sasadangelo/k8s-tutorials/master/hello-k8s/deployment.yml
 ```
 
-You can see 5 pods running using the ```kubectl get pods``` command. You can type now in your browser the URL ```ÌP:PORT``` where IP is the ```192.168.x.x``` address of one of the two worker nodes ( **k8s-node-1** or **k8s-node-2** ) and PORT is the one you get typing the command:
+You can see 5 pods running using the ```kubectl get pods -n hello-k8s-ns``` command. You can type now in your browser the URL ```ÌP:PORT``` where IP is the ```192.168.x.x``` address of one of the two worker nodes ( **k8s-worker-1** or **k8s-worker-2** ) and PORT is the one you get typing the command:
 
 ```
 kubectl describe service hello-k8s-service -n hello-k8s-ns | grep NodePort
