@@ -75,6 +75,7 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: "/mnt/data"
+  https://github.com/sasadangelo/k8s-tutorials
 
 Per creare un PersistentVolumeClaim
 -----------------------------------
