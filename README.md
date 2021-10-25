@@ -7,7 +7,7 @@ The following is the list of tutorials.
 ## 1) How to generate Kubernetes YAML files
 
 When you start working with Kubernetes the first problem you find is to remember the YAML format for each Kubernetes resources (pod, service, deployment, etc.).
-After a while, you realize that even if the YAML format has some basic format, it's impossible to remember it for all the possibles Kubernetes resources.
+After a while, you realize that even if the YAML has some basic format, it's impossible to remember it for all the possibles Kubernetes resources.
 The easiest but most time consuming solution to this problem is to search on google a YAML example for each resource you need to create. Another possible
 solution is to search for YAML generator on the web like [this](https://k8syaml.com/) or [this](https://8gwifi.org/kube.jsp).
 
