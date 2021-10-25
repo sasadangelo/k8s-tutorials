@@ -203,7 +203,6 @@ spec:
 For NodePort Service the YAML file is the same, the only different row is ```type: ClusterIP``` while for Load Balancer is ```type: LoadBalancer```. For headless service you can use the command for Cluster IP service and modify the resulting YAML file replacing the value of ```type``` field with ```type: None```.
 
 ## Secret
---------------------
 
 Generate the YAML file for deployments using the command:
 
