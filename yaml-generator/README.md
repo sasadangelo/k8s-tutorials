@@ -102,12 +102,8 @@ kubectl explain <resource> --recursive
 
 where ```<resource>```
 
-can be the following:
+can be the one of the possible Kubernetes resources (i.e. pod, namespace, deployment, etc.). The command will report the YAML structure with all the supported fields with its type.
 
-* namespace
-* pod
-* deployment
-* 
 ## Generate Kubernetes YAML files
 
 Now we are ready to explore how to generate Kubernetes YAML files for the Kubernetes resources. Let's explore all the Kubernetes resources one by one.
