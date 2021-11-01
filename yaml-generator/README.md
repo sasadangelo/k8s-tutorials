@@ -92,6 +92,22 @@ pvc=persistentvolumeclaim
 sa=securityaccount
 ```
 
+### Master the Kubernetes YAML syntax
+
+The commands ```kubectl create``` and ```kubectl run``` allow you to create only basic YAML file. In order to know all possible options you can add to it you need the command:
+
+```
+kubectl explain <resource> --recursive
+```
+
+where ```<resource>```
+
+can be the following:
+
+* namespace
+* pod
+* deployment
+* 
 ## Generate Kubernetes YAML files
 
 Now we are ready to explore how to generate Kubernetes YAML files for the Kubernetes resources. Let's explore all the Kubernetes resources one by one.
@@ -166,9 +182,9 @@ spec:
         name: nginx
 ```
 
-## ReplicaSet
+## ReplicaSet, DaemonSet, StatefulSets
 
-It's exactly the same command of ```Deployment```, you only need to replace ```Deployment``` with ```ReplicaSet``` in the YAML file.
+It's exactly the same command of ```Deployment```, you only need to replace ```Deployment``` with ```ReplicaSet``` (or ```StatefulSet``` or ```DaemonSet```) in the YAML file.
 
 ## Service
 
