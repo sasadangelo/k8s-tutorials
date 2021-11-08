@@ -92,6 +92,18 @@ pvc=persistentvolumeclaim
 sa=securityaccount
 ```
 
+### Master the Kubernetes YAML syntax
+
+The commands ```kubectl create``` and ```kubectl run``` allow you to create only basic YAML file. In order to know all possible options you can add to it you need the command:
+
+```
+kubectl explain <resource> --recursive
+```
+
+where ```<resource>```
+
+can be the one of the possible Kubernetes resources (i.e. pod, namespace, deployment, etc.). The command will report the YAML structure with all the supported fields with its type.
+
 ## Generate Kubernetes YAML files
 
 Now we are ready to explore how to generate Kubernetes YAML files for the Kubernetes resources. Let's explore all the Kubernetes resources one by one.
@@ -113,6 +125,12 @@ metadata:
   name: myns
 ```
 
+Use the following command to add all possible fields to your YAML file:
+
+```
+kubectl explain namespace --recursive
+```
+
 ## Pod
 
 Generate the YAML file for pods using the command:
@@ -132,6 +150,12 @@ spec:
   containers:
   - name: nginx
     image: nginx
+```
+
+Use the following command to add all possible fields to your YAML file:
+
+```
+kubectl explain pod --recursive
 ```
 
 ## Deployment
@@ -166,9 +190,15 @@ spec:
         name: nginx
 ```
 
-## ReplicaSet
+Use the following command to add all possible fields to your YAML file:
 
-It's exactly the same command of ```Deployment```, you only need to replace ```Deployment``` with ```ReplicaSet``` in the YAML file.
+```
+kubectl explain deployment --recursive
+```
+
+## ReplicaSet, DaemonSet, StatefulSets
+
+It's exactly the same command of ```Deployment```, you only need to replace ```Deployment``` with ```ReplicaSet``` (or ```StatefulSet``` or ```DaemonSet```) in the YAML file.
 
 ## Service
 
@@ -202,8 +232,13 @@ spec:
 
 For NodePort Service the YAML file is the same, the only different row is ```type: ClusterIP``` while for Load Balancer is ```type: LoadBalancer```. For headless service you can use the command for Cluster IP service and modify the resulting YAML file replacing the value of ```type``` field with ```type: None```.
 
+Use the following command to add all possible fields to your YAML file:
+
+```
+kubectl explain service --recursive
+```
+
 ## Secret
---------------------
 
 Generate the YAML file for deployments using the command:
 
@@ -231,6 +266,12 @@ data:
   PRIVATE_KEY_1: value in base64 encoding
   CA_1: value in base64 encoding
   ...
+```
+
+Use the following command to add all possible fields to your YAML file:
+
+```
+kubectl explain secret --recursive
 ```
 
 ### How to inject Secret in a Pod
@@ -276,6 +317,12 @@ spec:
         name: nginx
 ```
 
+Use the following command to add all possible fields to your YAML file:
+
+```
+kubectl explain job --recursive
+```
+
 ## CronJob
 
 Generate the YAML file for cronjobs using the command:
@@ -304,6 +351,12 @@ spec:
   schedule: '* * * * *'
 ```
 
+Use the following command to add all possible fields to your YAML file:
+
+```
+kubectl explain cronjob --recursive
+```
+
 ## Ingress
 
 Generate the YAML file for ingress using the command:
@@ -327,6 +380,12 @@ spec:
         number: 80
 ```
 
+Use the following command to add all possible fields to your YAML file:
+
+```
+kubectl explain ingress --recursive
+```
+
 ## ServiceAccount
 
 Generate the YAML file for a service account using the command:
@@ -342,6 +401,12 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: mysa
+```
+
+Use the following command to add all possible fields to your YAML file:
+
+```
+kubectl explain serviceaccount --recursive
 ```
 
 ## PersistentVolume
@@ -365,6 +430,12 @@ spec:
     path: "/mnt/data"
 ```
 
+Use the following command to add all possible fields to your YAML file:
+
+```
+kubectl explain persistentvolume --recursive
+```
+
 ## PersistentVolumeClaim
 
 Here a basic template for PersistentVolume:
@@ -381,6 +452,12 @@ spec:
   resources:
     requests:
       storage: 3Gi
+```
+
+Use the following command to add all possible fields to your YAML file:
+
+```
+kubectl explain persistentvolumeclaim --recursive
 ```
 
 ### How to inject PersistentVolumeClaim in a Pod
@@ -425,6 +502,12 @@ mountOptions:
 volumeBindingMode: Immediate
 ```
 
+Use the following command to add all possible fields to your YAML file:
+
+```
+kubectl explain storageclass --recursive
+```
+
 ## Network Policy
 
 Here a basic template for PersistentVolume:
@@ -464,4 +547,10 @@ spec:
     ports:
     - protocol: TCP
       port: 5978
+```
+
+Use the following command to add all possible fields to your YAML file:
+
+```
+kubectl explain networkpolicy --recursive
 ```
