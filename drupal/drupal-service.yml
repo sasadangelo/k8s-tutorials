@@ -6,6 +6,7 @@ spec:
   ports:
   - name: drupal
     port: 80
+    targetPort: 8080
     protocol: TCP
     nodePort: 30095
   selector:

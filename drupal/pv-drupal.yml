@@ -10,3 +10,4 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: "/drupal-data"
+    type: Directory
